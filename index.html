@@ -1,0 +1,630 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam I Adams Attorneys & Conveyancers | Cape Town Law Firm</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0F1E36',
+                            900: '#0A1424',
+                            950: '#060C17'
+                        },
+                        gold: {
+                            400: '#D4AF37',
+                            500: '#C5A028',
+                            600: '#B08C1E'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient {
+            background: linear-gradient(135deg, #DFBA44 0%, #C5A028 50%, #9E7D13 100%);
+        }
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #F3D477 0%, #C5A028 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-gold-500 selection:text-white">
+
+    <!-- TOP BAR -->
+    <div class="bg-navy-950 text-slate-300 text-sm py-2 px-4 border-b border-navy-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-6">
+                <a href="tel:0714443426" class="hover:text-gold-400 transition flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-gold-500"></i>
+                    <span>071 444 34 26</span>
+                </a>
+                <a href="mailto:mariamadam.law1@outlook.com" class="hover:text-gold-400 transition flex items-center gap-2">
+                    <i class="fa-solid fa-envelope text-gold-500"></i>
+                    <span>mariamadam.law1@outlook.com</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-4 text-xs tracking-wider uppercase">
+                <span class="inline-flex items-center gap-1.5 text-slate-400">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Wynberg & Athlone Branches
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-navy-900/95 backdrop-blur-md text-white border-b border-navy-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo / Name -->
+                <a href="#" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg gold-gradient flex items-center justify-center text-navy-950 font-serif font-bold text-xl shadow-md">
+                        A
+                    </div>
+                    <div>
+                        <span class="block font-serif text-xl sm:text-2xl font-bold tracking-tight text-white leading-tight">
+                            ADAM <span class="text-gold-400">I</span> ADAMS
+                        </span>
+                        <span class="block text-xs tracking-widest uppercase text-slate-300 font-medium">
+                            Attorneys & Conveyancers
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                    <a href="#about" class="text-slate-200 hover:text-gold-400 transition">About Firm</a>
+                    <a href="#services" class="text-slate-200 hover:text-gold-400 transition">Practice Areas</a>
+                    <a href="#team" class="text-slate-200 hover:text-gold-400 transition">Our Legal Team</a>
+                    <a href="#offices" class="text-slate-200 hover:text-gold-400 transition">Our Offices</a>
+                    <button onclick="openConsultationModal()" class="px-5 py-2.5 rounded-md gold-gradient text-navy-950 font-semibold hover:brightness-110 transition shadow-md hover:shadow-gold-500/20">
+                        Book Consultation
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-md text-slate-300 hover:text-white hover:bg-navy-800 focus:outline-none" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-950 border-b border-navy-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-slate-200 hover:text-gold-400 font-medium">About Firm</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-slate-200 hover:text-gold-400 font-medium">Practice Areas</a>
+            <a href="#team" onclick="toggleMobileMenu()" class="block py-2 text-slate-200 hover:text-gold-400 font-medium">Our Legal Team</a>
+            <a href="#offices" onclick="toggleMobileMenu()" class="block py-2 text-slate-200 hover:text-gold-400 font-medium">Our Offices</a>
+            <div class="pt-2">
+                <button onclick="toggleMobileMenu(); openConsultationModal()" class="w-full py-3 rounded-md gold-gradient text-navy-950 font-semibold text-center shadow-md">
+                    Book Consultation
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-navy-950 text-white overflow-hidden py-20 lg:py-28">
+        <!-- Decorative Background Gradient Overlay -->
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-gold-500 blur-3xl"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-navy-800 blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-900 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-6">
+                    <i class="fa-solid fa-scale-balanced"></i> Adam I Adams Attorneys & Conveyancers
+                </div>
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    Dedicated Representation. <br>
+                    <span class="gold-text-gradient">Precise Conveyancing.</span>
+                </h1>
+                <p class="text-slate-300 text-lg sm:text-xl font-light leading-relaxed mb-8">
+                    Providing comprehensive civil & criminal litigation, property transfers, and notarial services. Serving clients across Wynberg, Athlone, and the greater Cape Town area.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="openConsultationModal()" class="px-7 py-4 rounded-md gold-gradient text-navy-950 font-bold text-center hover:brightness-110 transition shadow-lg flex items-center justify-center gap-2">
+                        <span>Schedule a Consultation</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <a href="#services" class="px-7 py-4 rounded-md bg-navy-800 hover:bg-navy-800/80 text-slate-200 font-medium text-center border border-navy-700 transition flex items-center justify-center">
+                        Explore Our Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST HIGHLIGHT STRIP -->
+    <section class="bg-navy-900 border-y border-navy-800 text-slate-300 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-2">
+                    <div class="text-gold-400 text-2xl font-bold font-serif mb-1">Conveyancing</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider">Property & Transfers</div>
+                </div>
+                <div class="p-2 border-l border-navy-800">
+                    <div class="text-gold-400 text-2xl font-bold font-serif mb-1">Notary Public</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider">Legal Contracts & Bonds</div>
+                </div>
+                <div class="p-2 border-l border-navy-800">
+                    <div class="text-gold-400 text-2xl font-bold font-serif mb-1">Litigation</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider">Civil & Criminal Defense</div>
+                </div>
+                <div class="p-2 border-l border-navy-800">
+                    <div class="text-gold-400 text-2xl font-bold font-serif mb-1">Dual Offices</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider">Wynberg & Athlone</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRACTICE AREAS SECTION -->
+    <section id="services" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-gold-600 mb-2">Our Areas of Practice</h2>
+                <p class="font-serif text-3xl sm:text-4xl font-bold text-navy-950">Tailored Legal Solutions for Individuals & Businesses</p>
+                <div class="w-16 h-1 gold-gradient mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Service Card 1: Conveyancing & Notarial -->
+                <div class="bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-lg bg-navy-950 text-gold-400 flex items-center justify-center text-2xl mb-6 shadow-md">
+                            <i class="fa-solid fa-house-chimney-law"></i>
+                        </div>
+                        <div class="inline-block px-3 py-1 rounded bg-amber-50 text-gold-600 text-xs font-semibold uppercase tracking-wider mb-3">
+                            Led by Adam I Adams
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-navy-950 mb-4">Conveyancing & Notarial Services</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            Comprehensive assistance with property law, real estate transfers, and official notarial document authentication.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
+                                <span>Property Transfers & Title Deed Registrations</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
+                                <span>De-registration & Property Compliance</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
+                                <span>Notarial Contracts & Notarial Bonds</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
+                                <span>Antenuptial Contracts (ANC Drafting & Execution)</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
+                                <span>General Notarial Authentication & Legal Services</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="openConsultationModal('Conveyancing & Notarial Services')" class="w-full py-3 rounded-md bg-navy-950 hover:bg-navy-900 text-white font-medium text-center transition flex items-center justify-center gap-2">
+                        <span>Inquire About Property & Notary</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 2: Civil & Criminal Litigation -->
+                <div class="bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-lg bg-navy-950 text-gold-400 flex items-center justify-center text-2xl mb-6 shadow-md">
+                            <i class="fa-solid fa-gavel"></i>
+                        </div>
+                        <div class="inline-block px-3 py-1 rounded bg-amber-50 text-gold-600 text-xs font-semibold uppercase tracking-wider mb-3">
+                            Led by Mariam Adam
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-navy-950 mb-4">Civil & Criminal Litigation</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            Robust court representation and legal dispute resolution with strategic, client-centered advocacy.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
+                                <span>Civil Law & Contractual Disputes</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
+                                <span>Criminal Law Defense & Legal Representation</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
+                                <span>Magistrate’s Court & High Court Representation</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
+                                <span>Commercial Disputes & General Legal Advice</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
+                                <span>Dispute Resolution & Legal Arbitrations</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="openConsultationModal('Civil & Criminal Litigation')" class="w-full py-3 rounded-md bg-navy-950 hover:bg-navy-900 text-white font-medium text-center transition flex items-center justify-center gap-2">
+                        <span>Inquire About Litigation</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEGAL TEAM SECTION (Clean Card Layout without Photo Placeholders) -->
+    <section id="team" class="py-20 bg-navy-950 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-gold-400 mb-2">Our Legal Practitioners</h2>
+                <p class="font-serif text-3xl sm:text-4xl font-bold">Experienced Legal Leadership</p>
+                <div class="w-16 h-1 gold-gradient mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Practitioner 1: Adam I Adams -->
+                <div class="bg-navy-900 rounded-xl p-8 border border-navy-800 shadow-xl flex flex-col justify-between hover:border-gold-500/40 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center text-navy-950 font-serif font-bold text-xl shadow">
+                                AA
+                            </span>
+                            <span class="px-3 py-1 rounded-full bg-navy-950 text-gold-400 text-xs font-semibold uppercase tracking-wider border border-gold-500/30">
+                                Conveyancer & Notary
+                            </span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-1">Adam I Adams</h3>
+                        <p class="text-gold-400 font-medium text-sm mb-4">Attorney, Conveyancer & Notary Public</p>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Specializing in property law, title deed transfers, notarial agreements, antenuptial contracts, estate conveyancing, and general conveyancing matters with precision and meticulous legal care.
+                        </p>
+                    </div>
+                    <div class="border-t border-navy-800 pt-4 flex items-center justify-between text-xs text-slate-400">
+                        <span>Primary Focus: Conveyancing & Notarial</span>
+                        <a href="tel:0714443426" class="text-gold-400 hover:underline">Contact Practitioner</a>
+                    </div>
+                </div>
+
+                <!-- Practitioner 2: Mariam Adam -->
+                <div class="bg-navy-900 rounded-xl p-8 border border-navy-800 shadow-xl flex flex-col justify-between hover:border-gold-500/40 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center text-navy-950 font-serif font-bold text-xl shadow">
+                                MA
+                            </span>
+                            <span class="px-3 py-1 rounded-full bg-navy-950 text-gold-400 text-xs font-semibold uppercase tracking-wider border border-gold-500/30">
+                                Litigation Specialist
+                            </span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-1">Mariam Adam</h3>
+                        <p class="text-gold-400 font-medium text-sm mb-4">Litigation Attorney</p>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Leading the firm’s litigation department, dedicated to advocating for clients across Civil Law, Criminal Defense, dispute resolutions, and Magistrate & High Court proceedings.
+                        </p>
+                    </div>
+                    <div class="border-t border-navy-800 pt-4 flex items-center justify-between text-xs text-slate-400">
+                        <span>Primary Focus: Civil & Criminal Litigation</span>
+                        <a href="mailto:mariamadam.law1@outlook.com" class="text-gold-400 hover:underline">Email Practitioner</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFICE LOCATIONS & CONTACT SECTION -->
+    <section id="offices" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-gold-600 mb-2">Accessibility & Contact</h2>
+                <p class="font-serif text-3xl sm:text-4xl font-bold text-navy-950">Our Office Locations</p>
+                <div class="w-16 h-1 gold-gradient mx-auto mt-4 rounded-full"></div>
+                <p class="text-slate-600 mt-4 text-sm">We operate from two convenient branches in Cape Town to serve you efficiently.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Main Office: Wynberg -->
+                <div class="bg-white rounded-xl p-8 border border-slate-200 shadow-md relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-2 h-full gold-gradient"></div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="px-3 py-1 rounded bg-navy-950 text-gold-400 text-xs font-semibold uppercase tracking-wider">
+                            Main Office
+                        </span>
+                        <i class="fa-solid fa-building-columns text-slate-300 text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-navy-950 mb-4">Wynberg Branch</h3>
+                    
+                    <div class="space-y-4 text-slate-700 text-sm mb-6">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-gold-600 mt-1"></i>
+                            <div>
+                                <span class="font-semibold block text-navy-950">Address</span>
+                                42 Clarence Road, Wynberg, Cape Town
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-phone text-gold-600 mt-1"></i>
+                            <div>
+                                <span class="font-semibold block text-navy-950">Telephone</span>
+                                <a href="tel:0714443426" class="hover:text-gold-600 transition">071 444 34 26</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope text-gold-600 mt-1"></i>
+                            <div>
+                                <span class="font-semibold block text-navy-950">Email</span>
+                                <a href="mailto:mariamadam.law1@outlook.com" class="hover:text-gold-600 transition">mariamadam.law1@outlook.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://maps.google.com/?q=42+Clarence+Road+Wynberg+Cape+Town" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-navy-950 uppercase tracking-wider hover:text-gold-600 transition">
+                        <span>Get Directions (Google Maps)</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+
+                <!-- Branch Office: Athlone -->
+                <div class="bg-white rounded-xl p-8 border border-slate-200 shadow-md relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-navy-800"></div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="px-3 py-1 rounded bg-slate-200 text-navy-950 text-xs font-semibold uppercase tracking-wider">
+                            Branch Office
+                        </span>
+                        <i class="fa-solid fa-location-dot text-slate-300 text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-navy-950 mb-4">Athlone Branch</h3>
+                    
+                    <div class="space-y-4 text-slate-700 text-sm mb-6">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-gold-600 mt-1"></i>
+                            <div>
+                                <span class="font-semibold block text-navy-950">Address</span>
+                                Unit 5 Rylands Estate, Athlone
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-phone text-gold-600 mt-1"></i>
+                            <div>
+                                <span class="font-semibold block text-navy-950">Telephone</span>
+                                <a href="tel:0714443426" class="hover:text-gold-600 transition">071 444 34 26</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope text-gold-600 mt-1"></i>
+                            <div>
+                                <span class="font-semibold block text-navy-950">Email</span>
+                                <a href="mailto:mariamadam.law1@outlook.com" class="hover:text-gold-600 transition">mariamadam.law1@outlook.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://maps.google.com/?q=Unit+5+Rylands+Estate+Athlone" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-navy-950 uppercase tracking-wider hover:text-gold-600 transition">
+                        <span>Get Directions (Google Maps)</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- DIRECT CALL-TO-ACTION BAR -->
+            <div class="bg-navy-950 rounded-2xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl border border-navy-800">
+                <div>
+                    <h3 class="font-serif text-2xl font-bold text-white mb-2">Require Direct Assistance?</h3>
+                    <p class="text-slate-300 text-sm max-w-xl">
+                        Contact our legal team directly or request a call back for urgent litigation and property conveyancing matters.
+                    </p>
+                </div>
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="tel:0714443426" class="px-6 py-3 rounded-md gold-gradient text-navy-950 font-bold hover:brightness-110 transition flex items-center gap-2 shadow-md">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Call 071 444 34 26</span>
+                    </a>
+                    <a href="mailto:mariamadam.law1@outlook.com" class="px-6 py-3 rounded-md bg-navy-800 hover:bg-navy-700 text-white font-medium border border-navy-700 transition flex items-center gap-2">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Send Email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 text-slate-400 text-sm border-t border-navy-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded gold-gradient flex items-center justify-center text-navy-950 font-serif font-bold text-lg">
+                            A
+                        </div>
+                        <span class="font-serif text-xl font-bold text-white">
+                            ADAM <span class="text-gold-400">I</span> ADAMS
+                        </span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
+                        Adam I Adams Attorneys and Conveyancers providing professional legal representation, conveyancing, property law, and notarial services across Wynberg, Athlone, and Cape Town.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-serif font-bold text-white text-base mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#about" class="hover:text-gold-400 transition">About Firm</a></li>
+                        <li><a href="#services" class="hover:text-gold-400 transition">Conveyancing & Notary</a></li>
+                        <li><a href="#services" class="hover:text-gold-400 transition">Civil & Criminal Litigation</a></li>
+                        <li><a href="#team" class="hover:text-gold-400 transition">Our Practitioners</a></li>
+                        <li><a href="#offices" class="hover:text-gold-400 transition">Office Locations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif font-bold text-white text-base mb-4">Contact Details</h4>
+                    <p class="text-xs text-slate-400 mb-2">
+                        <strong class="text-slate-200">Main Branch:</strong> 42 Clarence Road, Wynberg, Cape Town
+                    </p>
+                    <p class="text-xs text-slate-400 mb-2">
+                        <strong class="text-slate-200">Athlone Branch:</strong> Unit 5 Rylands Estate, Athlone
+                    </p>
+                    <p class="text-xs text-slate-400 mb-2">
+                        <strong class="text-slate-200">Phone:</strong> 071 444 34 26
+                    </p>
+                    <p class="text-xs text-slate-400">
+                        <strong class="text-slate-200">Email:</strong> mariamadam.law1@outlook.com
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-navy-900 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; <span id="year"></span> Adam I Adams Attorneys and Conveyancers. All Rights Reserved.</p>
+                <p class="mt-2 sm:mt-0">Attorneys, Conveyancers & Notaries Public</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CONSULTATION MODAL -->
+    <div id="consultation-modal" class="fixed inset-0 z-50 hidden bg-navy-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200">
+            <button onclick="closeConsultationModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition text-lg" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="mb-6">
+                <h3 class="font-serif text-2xl font-bold text-navy-950 mb-1">Request Consultation</h3>
+                <p class="text-slate-600 text-xs">Fill out the details below and our firm will respond promptly.</p>
+            </div>
+            
+            <form id="consultation-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Full Name</label>
+                    <input type="text" required placeholder="e.g. Jane Doe" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold-500 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Phone Number</label>
+                    <input type="tel" required placeholder="e.g. 071 000 0000" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold-500 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Email Address</label>
+                    <input type="email" required placeholder="name@example.com" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold-500 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Practice Area</label>
+                    <select id="practice-select" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold-500 text-sm bg-white">
+                        <option value="Conveyancing & Notarial Services">Conveyancing & Notarial Services (Adam I Adams)</option>
+                        <option value="Civil & Criminal Litigation">Civil & Criminal Litigation (Mariam Adam)</option>
+                        <option value="General Inquiry">General Legal Inquiry</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Preferred Office Location</label>
+                    <div class="flex gap-4 text-xs font-medium text-slate-700 pt-1">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="office" value="Wynberg" checked class="text-gold-500 focus:ring-gold-500">
+                            <span>Wynberg (Main)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="office" value="Athlone" class="text-gold-500 focus:ring-gold-500">
+                            <span>Athlone</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">Brief Description</label>
+                    <textarea rows="3" placeholder="Briefly describe your legal inquiry..." class="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold-500 text-sm"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 rounded-md gold-gradient text-navy-950 font-bold hover:brightness-110 transition shadow-md">
+                    Submit Consultation Request
+                </button>
+            </form>
+
+            <div id="form-success" class="hidden text-center py-6 space-y-3">
+                <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-xl">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h4 class="font-serif font-bold text-navy-950 text-xl">Thank You</h4>
+                <p class="text-slate-600 text-sm">Your consultation request has been received. Our firm will contact you shortly.</p>
+                <button onclick="closeConsultationModal()" class="mt-4 px-6 py-2 bg-slate-200 hover:bg-slate-300 text-navy-950 rounded-md text-xs font-bold uppercase tracking-wider">
+                    Close Window
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-xl';
+            }
+        }
+
+        // Modal Functions
+        function openConsultationModal(practiceArea) {
+            const modal = document.getElementById('consultation-modal');
+            const select = document.getElementById('practice-select');
+            
+            if (practiceArea) {
+                select.value = practiceArea;
+            }
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeConsultationModal() {
+            const modal = document.getElementById('consultation-modal');
+            const form = document.getElementById('consultation-form');
+            const success = document.getElementById('form-success');
+            
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+            
+            // Reset form UI after closing
+            setTimeout(() => {
+                form.reset();
+                form.classList.remove('hidden');
+                success.classList.add('hidden');
+            }, 300);
+        }
+
+        // Handle Form Submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('consultation-form');
+            const success = document.getElementById('form-success');
+            
+            form.classList.add('hidden');
+            success.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
+```
